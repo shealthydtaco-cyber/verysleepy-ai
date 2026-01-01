@@ -377,13 +377,17 @@ export function ChatInterface({ onSwitchToVoice }: { onSwitchToVoice?: () => voi
             size="sm"
             variant="ghost"
             disabled={!selectedText && !lastSent}
-            className={`h-11 rounded-xl px-3 ${(!selectedText && !lastSent) ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`h-11 rounded-xl px-3 bg-blue-900/40 border border-blue-500/30 text-blue-200 hover:bg-blue-800/50 hover:text-blue-100 transition-all ${(!selectedText && !lastSent) ? 'opacity-50 cursor-not-allowed' : ''}`}
             onClick={() => {
               const content = selectedText ? selectedText : (lastSent || "")
               if (content) {
                 rememberText(content)
                 setLastSent(null)
                 setSelectedText("")
+                // Electron compatibility: Send signal if window.electron is available
+                if (typeof window !== 'undefined' && (window as any).electron) {
+                  (window as any).electron.send('remember-triggered', { content });
+                }
               }
             }}
           >
