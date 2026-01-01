@@ -209,7 +209,7 @@ export function ChatInterface({ onSwitchToVoice }: { onSwitchToVoice?: () => voi
   }, [isMemoryPanelOpen])
 
   return (
-    <div className="flex flex-col h-[600px] w-full max-w-4xl mx-auto bg-black text-white rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
+    <div className="flex flex-col h-screen w-full bg-black text-white shadow-2xl overflow-hidden">
       <div className="p-4 border-b border-white/10 flex items-center justify-between bg-white/5">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/40">

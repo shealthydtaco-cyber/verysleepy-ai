@@ -126,7 +126,7 @@ export function VoiceInterface({ onSwitchToChat }: { onSwitchToChat?: () => void
   }
 
   return (
-    <div className="flex flex-col items-center justify-between min-h-[600px] w-full max-w-4xl mx-auto bg-black text-white p-6 rounded-3xl border border-white/10 shadow-2xl overflow-hidden relative">
+    <div className="flex flex-col items-center justify-between h-screen w-full bg-black text-white p-6 shadow-2xl overflow-hidden relative">
       {/* Header */}
       <div className="w-full flex items-center justify-between z-10">
         <div className="flex flex-col">
