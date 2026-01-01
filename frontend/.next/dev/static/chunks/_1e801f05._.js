@@ -2303,13 +2303,19 @@ function ChatInterface({ onSwitchToVoice }) {
                             size: "sm",
                             variant: "ghost",
                             disabled: !selectedText && !lastSent,
-                            className: `h-11 rounded-xl px-3 ${!selectedText && !lastSent ? 'opacity-50 cursor-not-allowed' : ''}`,
+                            className: `h-11 rounded-xl px-3 bg-blue-900/40 border border-blue-500/30 text-blue-200 hover:bg-blue-800/50 hover:text-blue-100 transition-all ${!selectedText && !lastSent ? 'opacity-50 cursor-not-allowed' : ''}`,
                             onClick: ()=>{
                                 const content = selectedText ? selectedText : lastSent || "";
                                 if (content) {
                                     rememberText(content);
                                     setLastSent(null);
                                     setSelectedText("");
+                                    // Electron compatibility: Send signal if window.electron is available
+                                    if (("TURBOPACK compile-time value", "object") !== 'undefined' && window.electron) {
+                                        window.electron.send('remember-triggered', {
+                                            content
+                                        });
+                                    }
                                 }
                             },
                             children: "Remember this"
@@ -2327,12 +2333,12 @@ function ChatInterface({ onSwitchToVoice }) {
                                 className: "w-5 h-5"
                             }, void 0, false, {
                                 fileName: "[project]/components/chat-interface.tsx",
-                                lineNumber: 398,
+                                lineNumber: 402,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/chat-interface.tsx",
-                            lineNumber: 392,
+                            lineNumber: 396,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2343,12 +2349,12 @@ function ChatInterface({ onSwitchToVoice }) {
                                 className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/components/chat-interface.tsx",
-                                lineNumber: 405,
+                                lineNumber: 409,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/chat-interface.tsx",
-                            lineNumber: 400,
+                            lineNumber: 404,
                             columnNumber: 11
                         }, this)
                     ]
