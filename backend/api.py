@@ -11,11 +11,10 @@ process_input = None
 
 app = FastAPI(title="VerySleepy AI API")
 
-# Allow local dev origins (adjust as needed)
-origins = ["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:8000"]
+# Allow all origins for Replit environment
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
