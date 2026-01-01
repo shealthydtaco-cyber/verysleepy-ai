@@ -44,31 +44,7 @@ export default function Home() {
             <ChatInterface onSwitchToVoice={() => setView("voice")} />
           )}
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
-          <FeatureCard
-            title="Fluid Ambience"
-            description="Dynamic wave animations that respond to voice activity and system state."
-          />
-          <FeatureCard
-            title="Ethereal Orb"
-            description="A high-performance WebGL visualizer enclosed in a glass-morphism bubble."
-          />
-          <FeatureCard
-            title="State Feedback"
-            description="Clear visual communication through color shifts and pulsing motion patterns."
-          />
-        </div>
       </div>
     </main>
-  )
-}
-
-function FeatureCard({ title, description }: { title: string; description: string }) {
-  return (
-    <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
-      <h3 className="text-white font-semibold mb-2">{title}</h3>
-      <p className="text-neutral-400 text-sm leading-relaxed">{description}</p>
-    </div>
   )
 }

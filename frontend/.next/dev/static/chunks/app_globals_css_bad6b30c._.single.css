@@ -97,7 +97,6 @@
     --color-blue-600: #155dfc;
     --color-pink-400: #fb64b6;
     --color-pink-600: #e30076;
-    --color-neutral-400: #a1a1a1;
     --color-neutral-500: #737373;
     --color-neutral-900: #171717;
     --color-neutral-950: #0a0a0a;
@@ -155,7 +154,6 @@
       --color-blue-600: lab(44.0605% 29.0279 -86.0352);
       --color-pink-400: lab(64.5597% 64.3615 -12.7988);
       --color-pink-600: lab(49.5493% 79.8381 2.31768);
-      --color-neutral-400: lab(66.128% -.0000298023 .0000119209);
       --color-neutral-500: lab(48.496% 0 0);
       --color-neutral-900: lab(7.78201% -.0000149012 0);
       --color-neutral-950: lab(2.75381% 0 0);
@@ -1362,10 +1360,6 @@
     grid-auto-rows: min-content;
   }
 
-  .grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .grid-cols-\[0_1fr\] {
     grid-template-columns: 0 1fr;
   }
@@ -2040,10 +2034,6 @@
     padding-top: calc(var(--spacing) * 4);
   }
 
-  .pt-12 {
-    padding-top: calc(var(--spacing) * 12);
-  }
-
   .pr-1 {
     padding-right: calc(var(--spacing) * 1);
   }
@@ -2278,10 +2268,6 @@
 
   .text-muted-foreground {
     color: var(--muted-foreground);
-  }
-
-  .text-neutral-400 {
-    color: var(--color-neutral-400);
   }
 
   .text-neutral-500 {
@@ -4562,12 +4548,6 @@
   @media (min-width: 48rem) {
     .md\:max-w-\[420px\] {
       max-width: 420px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:grid-cols-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
