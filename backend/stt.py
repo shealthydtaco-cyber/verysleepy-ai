@@ -7,8 +7,8 @@ import os
 
 model = WhisperModel(
     "small",
-    device="cuda",
-    compute_type="int8_float16"
+    device="cpu",
+    compute_type="int8"
 )
 
 def record_and_transcribe(seconds=5):
